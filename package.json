@@ -43,5 +43,9 @@
     "typescript": "6.0.3"
   },
   "private": true,
-  "packageManager": "bun@1.4.5"
+  "packageManager": "bun@1.4.5",
+  "overrides": {
+    "@emnapi/runtime": "1.11.3",
+    "@emnapi/core": "1.11.3"
+  }
 }
