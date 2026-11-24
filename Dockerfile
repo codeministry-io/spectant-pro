@@ -8,4 +8,12 @@ RUN apk upgrade --no-cache libxml2
 USER 101
 COPY dist /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
+# /version.txt names this build as <package version>+<commit>. The deploy screenshots
+# (codeministry/.github, cm-k8s-cluster spec 017) wait until it shows the new commit.
+ARG APP_VERSION=0.0.0
+ARG GIT_SHA=unknown
+USER root
+RUN printf '%s+%s\n' "$APP_VERSION" "$GIT_SHA" > /usr/share/nginx/html/version.txt
+USER 101
+
 EXPOSE 8080
