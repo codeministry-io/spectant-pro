@@ -20,3 +20,5 @@ Plans/
 .DS_Store
 .idea/
 .vscode/
+
+.worktrees/
