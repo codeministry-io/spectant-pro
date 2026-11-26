@@ -59,6 +59,6 @@ Anything visual is verified in a real browser via the Interceptor skill; animati
 
 ## Deployment
 
-Image `ghcr.io/codeministry/spectant-pro` (arm64), built by `.github/workflows/docker.yml` on push to `main`.
+Image `ghcr.io/codeministry-io/spectant-pro` (arm64), built by `.github/workflows/docker.yml` on push to `main`.
 Chart `helm-charts/charts/spectant-pro`, ArgoCD apps `sp-infra` / `sp-app` in namespace `sp-apps` of
 cm-k8s-cluster; Image Updater follows the `latest` digest.
