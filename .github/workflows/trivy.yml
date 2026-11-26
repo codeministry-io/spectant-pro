@@ -1,6 +1,6 @@
 # Trivy scan of the published image (cm-k8s-cluster spec 011, ISC-167): after every image build on main,
 # once a day and on demand. New HIGH/CRITICAL with a fix go to #security once; a scheduled run with findings
-# fails. Not a required check. The workflow itself lives in codeministry/.github.
+# fails. Not a required check. The workflow itself lives in codeministry-io/.github.
 name: Trivy
 
 on:
@@ -22,9 +22,9 @@ jobs:
       contents: read
       packages: read
       security-events: write
-    uses: codeministry/.github/.github/workflows/trivy-image.yml@main
+    uses: codeministry-io/.github/.github/workflows/trivy-image.yml@main
     with:
-      image: ghcr.io/codeministry/spectant-pro:latest
+      image: ghcr.io/codeministry-io/spectant-pro:latest
       sarif: true
     secrets:
       SECURITY_WEBHOOK: ${{ secrets.SECURITY_WEBHOOK }}

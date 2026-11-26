@@ -1,7 +1,7 @@
 # Deploy screenshots (cm-k8s-cluster spec 017): after every image build on main, wait until spectant.pro serves
 # the new bundles, record it at 1440 and at 390 and post both images to Slack. Its own file, never trivy.yml, so
 # `gh workflow disable screenshots.yml` stops it without touching the CVE scan. The workflow itself lives in
-# codeministry/.github. Not a required check: a red run blocks nothing.
+# codeministry-io/.github. Not a required check: a red run blocks nothing.
 name: Deploy screenshots
 
 on:
@@ -24,7 +24,7 @@ jobs:
     if: github.event_name == 'workflow_dispatch' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event != 'pull_request')
     permissions:
       contents: read
-    uses: codeministry/.github/.github/workflows/deploy-screenshots.yml@main
+    uses: codeministry-io/.github/.github/workflows/deploy-screenshots.yml@main
     with:
       pages: |
         https://spectant.pro/

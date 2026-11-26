@@ -22,7 +22,7 @@ permissions:
 jobs:
   images:
     name: Image — spectant-pro
-    uses: codeministry/helm-charts/.github/workflows/ghcr-cleanup.yml@main
+    uses: codeministry-io/helm-charts/.github/workflows/ghcr-cleanup.yml@main
     with:
       packages: spectant-pro
       keep-tagged: 10
